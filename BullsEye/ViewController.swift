@@ -40,7 +40,7 @@ class ViewController: UIViewController {
                         + "\nThe target value is \(targetValue)."
                         + "\nThe difference is \(difference)."
                         + "\nYou scored \(points) points."
-        let alert = UIAlertController(title: "Hello World", message: message, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "BullsEye!", message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "Right On", style: .Default, handler: nil)
         
         alert.addAction(action)
@@ -48,6 +48,10 @@ class ViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
         
         startNewRound()
+    }
+    
+    @IBAction func showInformation() {
+        let message = "This is a Turing School joint.\n"
     }
     
     @IBAction func sliderMoved(slider: UISlider) {
@@ -66,6 +70,12 @@ class ViewController: UIViewController {
         targetLabel.text = String(targetValue)
         roundLabel.text = String(currentRound)
         scoreLabel.text = String(score)
+    }
+    
+    @IBAction func resetGame() {
+        currentRound = 0
+        score = 0
+        startNewRound()
     }
 
 }
